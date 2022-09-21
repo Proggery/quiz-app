@@ -1,0 +1,16 @@
+[{
+    "question": "Hogy hívják Aladin papagáját az Ezeregyéjszaka meséiben?",
+    "result": "Jago",
+    "resultsArr": ["Abu", "Jago", "Jamal", "Razoul"]
+},
+{
+    "question": "Mi Micimackó kedvenc étele?",
+    "result": "Méz",
+    "resultsArr": ["Szamóca", "Szendvics", "Méz", "Fánk"]
+},
+{
+    "question": "Ki volt Batman hűséges társa?",
+    "result": "Robin",
+    "resultsArr": ["Robin", "Joker", "Alfred", "Kétarc"]
+}
+]

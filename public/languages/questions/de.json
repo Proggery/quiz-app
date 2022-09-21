@@ -1,0 +1,27 @@
+{
+  "questionsArray": [
+    {
+      "question": "Wie heißt Aladins Papagei in Tausendundeine Nacht?",
+      "result": "Jago",
+      "resultsArr": ["Abu", "Jago", "Jamal", "Razoul"]
+    },
+    {
+      "question": "Was ist das Lieblingsessen von Winnie Puuh?",
+      "result": "Honig",
+      "resultsArr": ["Erdbeere", "Sandwich", "Honig", "Pfannkuchen"]
+    },
+    {
+      "question": "Wer war Batmans treuer Begleiter?",
+      "result": "Robin",
+      "resultsArr": ["Robin", "Joker", "Alfred", "Two-Face"]
+    }
+  ],
+  "newGame": "Neue Runde",
+  "successResult": "Richtige Antwort!",
+  "errorResult": "Falsche Antwort! Die richtige Antwort war: ",
+  "endGame": "Beendet",
+  "endResults": {
+    "success": "Richtige Antwort: ",
+    "error": "Falsche Antwort: "
+  }
+}
