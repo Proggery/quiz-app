@@ -1,6 +1,6 @@
 import arrayShuffle from "array-shuffle";
 import { FC } from "react";
-import { Button, Stack } from "react-bootstrap";
+import { Button, Col, Row, Stack } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
 import { Questions } from "../../../interfaces";
 import { baseColors } from "../../../styles/Index.styled";
@@ -33,22 +33,24 @@ const QuestionButton: FC<IPROPS> = (props) => {
 
   return (
     <QuestionButtonsStyled>
-      <Stack className="py-3" direction="horizontal" gap={3}>
-        {shuffleArr !== undefined &&
-          shuffleArr.map((item: any, index: number) => (
-            <Button
-              style={{
-                backgroundColor: baseColors.LightBlue,
-                color: baseColors.DarkGreen,
-                fontWeight: 800,
-                letterSpacing: 1.4,
-              }}
-              key={index}
-              onClick={() => handlebutton(item)}
-            >
-              {item}
-            </Button>
-          ))}
+      <Stack className="content py-3" direction="horizontal" gap={3}>
+        <div className="buttons mt-3 mt-md-1">
+          {shuffleArr !== undefined &&
+            shuffleArr.map((item: any, index: number) => (
+              <Button
+                style={{
+                  backgroundColor: baseColors.LightBlue,
+                  color: baseColors.DarkGreen,
+                  fontWeight: 800,
+                  letterSpacing: 1.4,
+                }}
+                key={index}
+                onClick={() => handlebutton(item)}
+              >
+                {item}
+              </Button>
+            ))}
+        </div>
         {questionsArr === undefined && <Points />}
         <QuestionsCount
           questionsArr={questionsArr}

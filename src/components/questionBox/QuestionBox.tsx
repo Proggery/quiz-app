@@ -87,16 +87,18 @@ const QuestionBox: FC = () => {
 
   return (
     <QuestionContainerStyled>
-      <div className="d-flex">
-        <h5 style={{color: baseColors.LightBlue}}>Language: </h5>
-        <select
-          className="ms-2"
-          onChange={(e) => handleLangChange(e)}
-          value={lang}
-        >
-          <option value="hu">Magyar</option>
-          <option value="de">Deutsch</option>
-        </select>
+      <div className="d-flex flex-column flex-lg-row pt-3 pt-md-0">
+        <div className="d-flex align-items-center">
+          <h5 style={{color: baseColors.LightBlue}}>Language: </h5>
+          <select
+            className="ms-2"
+            onChange={(e) => handleLangChange(e)}
+            value={lang}
+          >
+            <option value="hu">Magyar</option>
+            <option value="de">Deutsch</option>
+          </select>
+        </div>
         <IsSuccess
           result={result}
           isSuccess={isSuccess}

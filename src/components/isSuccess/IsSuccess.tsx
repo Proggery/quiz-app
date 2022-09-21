@@ -1,7 +1,8 @@
+import { useMediaQuery } from "@material-ui/core";
 import { FC } from "react";
 import { useTranslation } from "react-i18next";
 import { Questions } from "../../interfaces";
-import { baseColors } from "../../styles/Index.styled";
+import { baseColors, device } from "../../styles/Index.styled";
 
 type IPROPS = {
   isSuccess: boolean | null;
@@ -13,26 +14,33 @@ const IsSuccess: FC<IPROPS> = ({ isSuccess, result, currValToNumber }) => {
   const { t } = useTranslation("questions");
   const data: Questions[] = t("questionsArray", { returnObjects: true });
 
-  const success: { color: string; top: string; left: number } = {
+  const mediaLG = useMediaQuery(device.lg);
+  const mediaMD = useMediaQuery(device.md);
+  const mediaSM = useMediaQuery(device.sm);
+
+  const success: { color: string; top: string } = {
     color: baseColors.Green,
-    top: "-8rem",
-    left: 0,
+    top: mediaSM ? "3.2rem" : mediaMD ? "2.4rem" : mediaLG ? "1rem" : "-1rem",
+  };
+
+  const successH1: { fontSize: number } = {
+    fontSize: mediaSM ? 20 : mediaMD ? 25 : 40,
   };
 
   return (
     <>
-      {isSuccess !== null && (
+      {isSuccess === null && (
         <div
-          className={`text-center w-100 position-absolute`}
+          className={`mt-2 mt-sm-4 mt-lg-0 text-md-center text-lg-end w-100 position-absolute pe-3`}
           style={isSuccess ? success : { ...success, color: baseColors.Red }}
         >
           {isSuccess ? (
-            <h1>{t("successResult")}</h1>
+            <h1 style={successH1}>{t("successResult")}</h1>
           ) : (
             <div>
-              <h1>
+              <h1 style={successH1}>
                 {t("errorResult")}
-                <span className="ms-3 text-info">
+                <span className="ms-1 ms-md-3 text-info">
                   {data[currValToNumber].result}
                 </span>
               </h1>
